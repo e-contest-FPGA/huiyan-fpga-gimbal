@@ -1,0 +1,178 @@
+{
+  "builds": {
+    "V20S2F2": {
+      "archive_sha256": "0c7e05ca7e8fa8392381297859fe7ae530561a8edc79ad5cebe15c61cce46ff0",
+      "firmware_sha256": "028e8fab2d83a4882e23d970fa73b4230f42b8e7d13c07afb4478cd5a22eb553",
+      "setup_slack_ns": 0.03,
+      "hold_slack_ns": 0.02,
+      "resources": {
+        "slice": 19505,
+        "registers": 17613,
+        "eram": 96,
+        "dsp": 34
+      },
+      "hardware_record": "Flash write and power-cycle observation"
+    },
+    "V21F1": {
+      "archive_sha256": "c1d5e68b868f338092d792d9933903f74fe60a8409bc28a2769a4df7f130627f",
+      "firmware_sha256": "ede4f757ebdd75ffc4ffc6362d1916f595a98275e664cebac958e70d13d5532d",
+      "setup_slack_ns": 0.101,
+      "hold_slack_ns": 0.02,
+      "resources": {
+        "slice": 19096,
+        "reg": 19685,
+        "eram": 101,
+        "dsp": 36
+      },
+      "hardware_record": "No hardware programming recorded"
+    }
+  },
+  "sources": {
+    "rtl/v20s2f2/gimbal_servo_ctrl.v": {
+      "version": "V20S2F2",
+      "archive_member": "user_source/hdl_source/gimbal_servo_ctrl.v",
+      "sha256": "4adabc12a6709696583eb984526ac9da94fc9cc27e4df71c9fd15eb3e91eed4e"
+    },
+    "rtl/v20s2f2/video_color_tracker.v": {
+      "version": "V20S2F2",
+      "archive_member": "user_source/hdl_source/video_color_tracker.v",
+      "sha256": "25137296cc35c22d9e662f5c9b1e0587e64235121c0cd48c76aacb4a73ef6989"
+    },
+    "rtl/v20s2f2/video_frame_latency.v": {
+      "version": "V20S2F2",
+      "archive_member": "user_source/hdl_source/video_frame_latency.v",
+      "sha256": "d2e4ac22f0ad6130d0471fec9930675ad9c538fd901bd63849cd0996865f6453"
+    },
+    "rtl/v21f1/camera_analysis_stream.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/camera_analysis_stream.v",
+      "sha256": "0e68f76ab077102318fdd4d62a2a346dc613e83999329f0a64c0d3c8bef02c23"
+    },
+    "rtl/v21f1/gimbal_servo_ctrl.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/gimbal_servo_ctrl.v",
+      "sha256": "0e7610d8306d96cb90533de9fd6efbfd1546e3aab5add4584d2ab5d4324e8603"
+    },
+    "rtl/v21f1/servo_cdc.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/servo_cdc.v",
+      "sha256": "d64be37acfe0205175ea6b56713a4c4f0168f0e5ea12226b424036f7057430bd"
+    },
+    "rtl/v21f1/servo_color_bin.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/servo_color_bin.v",
+      "sha256": "062a888ab3175277c8d7f8d8b03259a76683797db290ebe4b5c13da4352b2754"
+    },
+    "rtl/v21f1/servo_exposure.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/servo_exposure.v",
+      "sha256": "fd806589d279ab0af499075da9a4c00a5c7d14745aca0a3ece6c00d2bc3471e1"
+    },
+    "rtl/v21f1/servo_overlay_history.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/servo_overlay_history.v",
+      "sha256": "90eb70ade917738329ab110a9d64bd39f398341477400a80f737042aef56f7ee"
+    },
+    "rtl/v21f1/servo_stream_tracker.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/servo_stream_tracker.v",
+      "sha256": "eca911a335a65177b229ba820abecfb4e5a08e21c25affbca320922c06dd6bfd"
+    },
+    "rtl/v21f1/servo_telemetry.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/servo_telemetry.v",
+      "sha256": "bd860891f35a30e1f2e74e3c4fcbb026ae869116ff8003aeb4e884b25c1a7f87"
+    },
+    "rtl/v21f1/servo_vision_system.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/servo_vision_system.v",
+      "sha256": "4e614b0749fc1a506a7727035e8fbee64724e4a7c63fdea72cfad8e8b42d7f98"
+    },
+    "rtl/v21f1/video_track_manager.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/video_track_manager.v",
+      "sha256": "bb9c52af1e04613e97946ed2c2e6c89250e1daeec9f209ef7202af5a3666e8c7"
+    },
+    "rtl/v21f1/video_frame_latency.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/video_frame_latency.v",
+      "sha256": "8a3de84b59ff2b914045fd67d8d46ca2c703fbb4d7e53d3120d7710ab7867cfb"
+    },
+    "rtl/v21f1/video_color_correct.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/video_color_correct.v",
+      "sha256": "676babc82eb8cd409aa51117c8a39cbb6e5565bafcb5f5b235537ecf75acb01e"
+    },
+    "rtl/v21f1/video_mode_control.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/video_mode_control.v",
+      "sha256": "6069e53d98b0b0ac702c722c1d52d1ffe3231b1cfc7f8c5da20551295b8f01fe"
+    },
+    "rtl/v21f1/video_visual_effects.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/video_visual_effects.v",
+      "sha256": "7877cad3df12e738595e44150e28ba97ad931d3bb0b457cb08c2d471f907d08c"
+    },
+    "rtl/v21f1/video_four_modes.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/video_four_modes.v",
+      "sha256": "3700adf62bd5147ba9fd4b28054a426ef4ce54341835686755c4e0a0b324f705"
+    },
+    "tools/telemetry_v21.py": {
+      "version": "V21F1",
+      "archive_member": "telemetry_v21.py",
+      "sha256": "d45568c1dcd7f5cc1e2089169691a554d596a894928c3be9502080d939176924"
+    },
+    "tools/capture_telemetry.ps1": {
+      "version": "V21F1",
+      "archive_member": "capture_telemetry.ps1",
+      "sha256": "ee8906380fbc094311f5f776d10a6b7b314ad9cee9eb038c180c5ef6bbab2387"
+    },
+    "sim/tb_frame_meter.sv": {
+      "version": "V21F1",
+      "archive_member": "verification/tb_frame_meter.sv",
+      "sha256": "8b0e754098e333c256a760e1398bf2ce85db81a7febc79a1874d007591f10056"
+    },
+    "sim/tb_servo_background.sv": {
+      "version": "V21F1",
+      "archive_member": "verification/servo/tb_servo_background.sv",
+      "sha256": "9ea359d6411f134354503955c46eace7fbeac38e7a969f8a7755a8dfa65b68e4"
+    },
+    "sim/tb_servo_stable.sv": {
+      "version": "V21F1",
+      "archive_member": "verification/servo/tb_servo_stable.sv",
+      "sha256": "e156f900950e531d7590e750b244d280213fc9f43fd180ce29c8665aabd3fd40"
+    },
+    "sim/tb_camera_stream.sv": {
+      "version": "V21F1",
+      "archive_member": "verification/servo/tb_camera_stream.sv",
+      "sha256": "c9fe61c60879455cfb8c001a5dd3f8f8eb7cd3400bcee5f8c975c623fb939653"
+    },
+    "sim/tb_servo_cdc.sv": {
+      "version": "V21F1",
+      "archive_member": "verification/servo/tb_servo_cdc.sv",
+      "sha256": "b6178a74efdce696158e522f973770434fa8174db0681de0b609339b8d0301fb"
+    },
+    "sim/tb_servo_overlay.sv": {
+      "version": "V21F1",
+      "archive_member": "verification/servo/tb_servo_overlay.sv",
+      "sha256": "5c01c184295e590b6b9c0dc3a533ef68d94e7b42ac79c1309c2d4a4d9d28946d"
+    },
+    "sim/tb_servo_exposure.sv": {
+      "version": "V21F1",
+      "archive_member": "verification/servo/tb_servo_exposure.sv",
+      "sha256": "7bcd75d9f0961c0d9db78fb127e45d8a2b57c26ea2bc55e7015553538e5e9a28"
+    },
+    "sim/tb_servo_telemetry.sv": {
+      "version": "V21F1",
+      "archive_member": "verification/servo/tb_servo_telemetry.sv",
+      "sha256": "94d3ba41defe08eb4cb29947b4ca1744672fb65e402741c67716f79202aa9090"
+    },
+    "rtl/v21f1/video_target_ram.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/video_mode_osd.v",
+      "extracted_module": "video_target_ram",
+      "sha256": "0e5c7359290156cd0ab1193a90ea9c1dd61556b8490a8720ca073d58ffbc4014"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.vvp
+out/
+board-project/
+release-assets/

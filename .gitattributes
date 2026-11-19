@@ -1,0 +1,7 @@
+# Keep the provenance hashes of imported source snapshots stable.
+rtl/** -text
+sim/** -text
+tools/telemetry_v21.py -text
+tools/capture_telemetry.ps1 -text
+*.gif binary
+*.jpg binary
