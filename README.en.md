@@ -22,3 +22,5 @@ python tools/simulate.py
 ```
 
 The nine HDL suites cover target acquisition on pale backgrounds, motion control, frame age, exposure, telemetry, clock-domain mailboxes, and integrated tracking. A board build also needs the matching team archive and vendor dependencies. See the [quick start](docs/quickstart.en.md) and [source notice](NOTICE.md).
+
+The team's original code in `rtl/`, `sim/`, and `tools/` is released under the [MIT License](LICENSE). Vendor IP, board archives, bitstreams, the report, demo media, and marks are subject to their respective terms. See the [source and licensing notice](NOTICE.md).

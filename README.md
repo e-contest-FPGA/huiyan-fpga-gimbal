@@ -6,7 +6,7 @@
 
 [English](README.en.md) · [无板仿真](docs/reproduce.md#独立仿真) · [硬件接线](docs/hardware.md) · [测试证据](docs/evidence.md) · [完整演示与技术报告](https://github.com/e-contest-FPGA/huiyan-fpga-gimbal/releases/tag/v1.0.0)
 
-[![RTL simulation](https://github.com/e-contest-FPGA/huiyan-fpga-gimbal/actions/workflows/simulation.yml/badge.svg?branch=main)](https://github.com/e-contest-FPGA/huiyan-fpga-gimbal/actions/workflows/simulation.yml)
+[![RTL simulation](https://github.com/e-contest-FPGA/huiyan-fpga-gimbal/actions/workflows/simulation.yml/badge.svg?branch=main)](https://github.com/e-contest-FPGA/huiyan-fpga-gimbal/actions/workflows/simulation.yml) [MIT 许可证（团队原创代码）](LICENSE)
 
 ![实拍片段。屏幕跟踪浅绿色手机，右侧为搭载摄像头的双轴云台。](docs/media/tracking.gif)
 
