@@ -1,0 +1,24 @@
+name: 仿真或源码问题 / Simulation or RTL bug
+description: Report a reproducible problem in the public HDL, tooling, or docs
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Commit and tool versions
+      placeholder: Commit SHA, OS, Python, Icarus
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: Commands, test name, input and expected output
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Actual output
+      render: shell
+    validations:
+      required: true

@@ -11,8 +11,14 @@ jobs:
   iverilog:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - name: Install Icarus Verilog
         run: sudo apt-get update && sudo apt-get install -y iverilog
+      - name: Verify archived sources
+        run: python3 tools/check_sources.py
       - name: Run HDL checks
         run: python3 tools/simulate.py
+      - name: Decode the simulated UART packet
+        run: python3 tools/telemetry_v21.py out/sim/rtl_uart_synthetic.bin --out out/sim/telemetry

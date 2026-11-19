@@ -17,6 +17,12 @@ JOBS = {
     "servo_overlay": ["servo_overlay_history.v"],
     "servo_exposure": ["servo_exposure.v", "servo_cdc.v"],
     "servo_telemetry": ["servo_telemetry.v"],
+    "servo_system": [
+        "camera_analysis_stream.v", "gimbal_servo_ctrl.v", "servo_cdc.v",
+        "servo_color_bin.v", "servo_exposure.v", "servo_latency_meter.v",
+        "servo_overlay_history.v", "servo_stream_tracker.v", "servo_telemetry.v",
+        "servo_vision_system.v", "video_target_ram.v", "video_track_manager.v",
+    ],
 }
 
 
@@ -54,7 +60,13 @@ def main():
         parser.error("Icarus Verilog is required. Put iverilog and vvp on PATH.")
     out = ROOT / "out" / "sim"
     out.mkdir(parents=True, exist_ok=True)
-    results = [run_test(name, compiler, simulator, out) for name in (args.test or JOBS)]
+    results = []
+    for name in args.test or JOBS:
+        try:
+            results.append(run_test(name, compiler, simulator, out))
+        except subprocess.TimeoutExpired as error:
+            print(f"{name}: timed out after {error.timeout} seconds", flush=True)
+            results.append(False)
     print(f"{sum(results)}/{len(results)} HDL suites passed")
     return 0 if all(results) else 1
 

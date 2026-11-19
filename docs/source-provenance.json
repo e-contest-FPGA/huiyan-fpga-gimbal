@@ -173,6 +173,16 @@
       "archive_member": "user_source/hdl_source/video_mode_osd.v",
       "extracted_module": "video_target_ram",
       "sha256": "0e5c7359290156cd0ab1193a90ea9c1dd61556b8490a8720ca073d58ffbc4014"
+    },
+    "rtl/v21f1/servo_latency_meter.v": {
+      "version": "V21F1",
+      "archive_member": "user_source/hdl_source/servo_latency_meter.v",
+      "sha256": "780a605f536467e969f24842a7936d905958a6019f2990a95b87291ce153bef7"
+    },
+    "sim/tb_servo_system.sv": {
+      "version": "V21F1",
+      "archive_member": "verification/servo/tb_servo_system.sv",
+      "sha256": "fc0c9c0cb9a2af781c060ce320e82f5eeaa0da76e7fb62e15e0af5384df24271"
     }
   }
 }

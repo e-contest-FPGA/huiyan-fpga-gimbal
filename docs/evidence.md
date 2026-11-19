@@ -18,4 +18,4 @@ F2 的 Slice / ERAM / DSP 为 19,505 / 96 / 34。V21F1 的资源为 19,096 / 101
 
 视频中可以看到绿色手机目标、跟随状态和云台动作。部分帧的绿色框覆盖物体周边，颜色相近的背景仍会影响轮廓。较新的版本加入候选区域筛选和可靠观测门控。浅色背景是台架测试项，现场改善幅度需要用同一物体、距离和光照做前后对照。
 
-本仓库的 `python tools/simulate.py` 运行 8 组独立 HDL 检查，覆盖帧龄、分析流、浅色背景、防抖、跨时钟握手、历史框、曝光和串口。固件与原始工程归档的哈希和文件来源见 [source-provenance.json](source-provenance.json)。
+本仓库的 `python tools/simulate.py` 运行 9 组 HDL 检查，包含 8 组模块台架与 1 组集成台架。集成台架覆盖 22 帧、8 项断言，包括控制先于延迟的显示帧号、坏帧拒绝、恢复和遮挡。输入相机数据与显示帧号由台架提供。光到屏幕时延和 V21F1 实物指标留待[上板对照](hardware-validation.md)采集。固件与原始工程归档的哈希和文件来源见 [source-provenance.json](source-provenance.json)。

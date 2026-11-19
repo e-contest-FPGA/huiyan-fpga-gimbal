@@ -4,7 +4,7 @@
 
 Huiyan pairs an Anlogic HX1P35A board with an SC500 MIPI camera, two servos, and an HDMI display. The demo shows target learning, pan and tilt control, and on-screen tracking and frame-age data.
 
-[简体中文](README.md) · [Reproduction guide (Chinese)](docs/reproduce.md) · [Evidence (Chinese)](docs/evidence.md) · [Full demo and technical report](https://github.com/e-contest-FPGA/huiyan-fpga-gimbal/releases/tag/v1.0.0)
+[简体中文](README.md) · [Quick start](docs/quickstart.en.md) · [RTL map](docs/rtl-guide.md) · [Evidence](docs/evidence.md) · [Full demo and technical report](https://github.com/e-contest-FPGA/huiyan-fpga-gimbal/releases/tag/v1.0.0)
 
 ![Hardware recording showing the tracked phone on a monitor and the gimbal beside it.](docs/media/demo.jpg)
 
@@ -17,7 +17,8 @@ The design uses color and spatial cues, so visually similar objects can be ambig
 With Python 3 and Icarus Verilog on your PATH, run:
 
 ```sh
+python tools/simulate.py --test servo_system
 python tools/simulate.py
 ```
 
-The tests exercise target acquisition on pale backgrounds, motion control, frame age, exposure, telemetry, and clock-domain mailboxes. A board build also needs the matching team archive and vendor dependencies. See the [reproduction guide](docs/reproduce.md) and [source notice](NOTICE.md).
+The nine HDL suites cover target acquisition on pale backgrounds, motion control, frame age, exposure, telemetry, clock-domain mailboxes, and integrated tracking. A board build also needs the matching team archive and vendor dependencies. See the [quick start](docs/quickstart.en.md) and [source notice](NOTICE.md).

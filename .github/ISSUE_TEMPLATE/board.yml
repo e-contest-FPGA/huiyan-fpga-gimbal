@@ -1,0 +1,27 @@
+name: 上板复现 / Board reproduction
+description: Request archive availability or share a hardware test result
+body:
+  - type: input
+    id: setup
+    attributes:
+      label: Board, camera and toolchain
+      placeholder: HX1P35A / SC500CS / TD build number
+    validations:
+      required: true
+  - type: dropdown
+    id: purpose
+    attributes:
+      label: Topic
+      options:
+        - Original archive availability
+        - Wiring or bring-up
+        - Hardware measurement
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: Details
+      description: Include firmware hash, switch states and steps if reporting a result.
+    validations:
+      required: true

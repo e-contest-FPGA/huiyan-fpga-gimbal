@@ -7,15 +7,18 @@
 ```sh
 python tools/simulate.py
 python tools/simulate.py --test servo_background --test frame_meter
+python tools/simulate.py --test servo_system
 ```
 
-输出位于 `out/sim`。测试数据由台架生成，便于复现目标、背景和遮挡条件。
+输出位于 `out/sim`。全量命令运行 9 组 HDL 台架，集成台架使用合成相机输入与模拟的显示帧号。若想顺带试串口解码，先运行 `--test servo_telemetry`，再运行 `python tools/telemetry_v21.py out/sim/rtl_uart_synthetic.bin --out out/sim/telemetry`。该文件由仿真产生。
 
 ## 完整板级工程
 
-板级目标是 HX1P35A / PH1P35MDG324。配套 SC500 摄像头、HDMI 显示器、双轴舵机、独立舵机电源和下载线。归档构建工具为 Anlogic TD 6.2.1 Engineer（6.2.168116）。
+板级目标是 HX1P35A / PH1P35MDG324。硬件与连线见[接线图](hardware.md)。归档构建工具为 Anlogic TD 6.2.1 Engineer（6.2.168116）。工具从[安路工具下载](https://www.anlogic.com/support/tools-downloads)获取。
 
-拿到团队原始工程归档后，用下面的命令核对 SHA-256 并解包。
+[安路官方赛题指南第 8 页](https://www.anlogic.com/Public/Uploads/ueditor/upload/file/20260826/1787734941769836.pdf#page=8)列出厂商参考包 `HX1P35A_Contest_202606` 和 JTAG、MIPI、HDMI 示例。SC500CS 参考链路从 `7_lab_ex_2026_nosoft/lab_ex1_mipi_hdmi_SC500_720P` 入手。厂商参考包可用于验证基础采集与显示，完整云台构建还依赖下面这两份团队归档中的对应版本。
+
+团队归档含厂商 IP，读者可通过[上板复现 Issue](https://github.com/e-contest-FPGA/huiyan-fpga-gimbal/issues/new?template=board.yml)询问获取路径与可分发范围。已有原始归档后，用下面的命令同时核对归档和固件的 SHA-256 并解包。
 
 ```sh
 python tools/restore_board_project.py "SC500_720P_V20S2F2_FrameLatency_20261027.zip"
@@ -23,7 +26,7 @@ python tools/restore_board_project.py "SC500_720P_V20S2F2_FrameLatency_20261027.
 
 在解包目录中打开 `td_project/camera_to_dsi_display.al`。脚本也接受 `SC500_720P_V21F1_帧延迟与性能优化_20261025.zip`。两版的 [归档与固件哈希](source-provenance.json) 可用于核对工程和固件来源。
 
-首次验证可从 V20S2F2 的 SRAM 下载开始。SW3 下拨并给相机排线留出转动空间，再从下载工具中手动选择固件。两只舵机使用独立 5V 电源并与 FPGA 共地，信号的封装管脚为水平 V2、俯仰 V1。排针编号以对应板卡原理图和工程约束为准。
+首次验证按[上板步骤](hardware.md#上电顺序)从 V20S2F2 的 SRAM 下载开始。两版同场对照用[实机验收方案](hardware-validation.md)。
 
 | 控件 | 操作 |
 | --- | --- |

@@ -1,0 +1,1 @@
+version,firmware_sha256,scenario,trial,switches,gimbal_enabled,recording_fps,target_distance_cm,lighting,visible_frames,background_box_frames,lost_frames,wrong_switches,hold_events,reacquire_ms,servo_start_ms,servo_settle_ms,outcome,video_reference,notes

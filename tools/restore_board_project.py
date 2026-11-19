@@ -16,6 +16,8 @@ def main():
     parser.add_argument("--output", type=Path, default=Path("board-project"))
     args = parser.parse_args()
     builds = json.loads(MANIFEST.read_text(encoding="utf-8"))["builds"]
+    if not args.archive.is_file():
+        parser.error("Original team ZIP not found. See docs/reproduce.md for archive access and the public simulation route.")
     digest = hashlib.sha256(args.archive.read_bytes()).hexdigest()
     matches = [version for version, build in builds.items() if build["archive_sha256"] == digest]
     if not matches:
@@ -36,8 +38,14 @@ def main():
         output = args.output / root
         if output.exists():
             parser.error(f"Project already exists: {output}")
-        if entry not in archive.namelist() or archive.testzip() is not None:
+        members = set(archive.namelist())
+        if entry not in members or archive.testzip() is not None:
             parser.error("Archive is incomplete or corrupt")
+        firmware = [item for item in archive.infolist()
+                    if item.filename.startswith(f"{root}/firmware/") and item.filename.endswith(".bit")]
+        firmware_hash = builds[matches[0]]["firmware_sha256"]
+        if not any(hashlib.sha256(archive.read(item)).hexdigest() == firmware_hash for item in firmware):
+            parser.error("Archive does not contain the documented firmware")
         archive.extractall(args.output)
     print(f"{matches[0]} verified. Open {args.output / entry} in TD.")
 
